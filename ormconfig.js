@@ -5,6 +5,8 @@
   entities: ['**/ /*.entity.js'],
 };
 */
+import * as dotenv from 'dotenv';
+dotenv.config();
 var dbConfig = {
   synchronize: false,
 };
@@ -26,6 +28,7 @@ switch (process.env.NODE_ENV) {
     });
     break;
   case 'production':
+    console.log('DATABASE_URL:', process.env.DATABASE_URL);
     Object.assign(dbConfig, {
       type: 'postgres',
       url: process.env.DATABASE_URL,
