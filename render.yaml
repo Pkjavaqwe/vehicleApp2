@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: vehicleapp2
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start:prod
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DB_NAME
+        value: vehicleapp2_db
+      - key: COOKIE_KEY
+        generateValue: true # Generates a random value for cookie signing
+    disk:
+      name: sqlite-data
+      mountPath: /data
+      sizeGB: 1
