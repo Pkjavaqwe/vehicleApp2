@@ -42,4 +42,4 @@ switch (process.env.NODE_ENV) {
   default:
     throw new Error('Unknown environment');
 }
-module.exports = dbConfig;
+export default dbConfig;
