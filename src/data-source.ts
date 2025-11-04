@@ -9,7 +9,7 @@ export default new DataSource({
     database: 'vehicle_db_02',
     synchronize: false,
     logging: true,
-    entities: ['**/*.entity.js'],
+    entities: ['**/*.entity.ts'],
     migrations: ['src/migration/*.ts'],
     ssl: {
         rejectUnauthorized: false,
